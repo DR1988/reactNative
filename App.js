@@ -1,92 +1,12 @@
-import React from 'react';
-import { Alert, Button, StyleSheet, Text, View, Image, TextInput } from 'react-native';
+import {
+  createStackNavigator,
+} from 'react-navigation';
+import LoginScreen from './LoginScreen'
+import RegisterScreen from './RegisterScreen'
 
-export default class App extends React.Component {
-  _onPressButton() {
-    Alert.alert('You tapped the button!')
-  }
-  render() {
-    return (
-      <View style={{
-        flex: 1,
-        flexDirection: 'column',
-        // justifyContent: 'center',
-        alignItems: 'center'
-      }}>
-        <View style={{
-          width: '100%',
-          height: '45%',
-          backgroundColor: 'red',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-          <Image
-            style={{ width: 100, height: 100 }}
-            resizeMode='contain'
-            source={require('./logo.png')}
-          />
-        </View>
-        <View style={{
-          width: '100%',
-          height: '45%',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-          <TextInput
-            style={{ borderWidth: 2, width: '50%', marginTop: 50, paddingHorizontal: 5 }}
-            underlineColorAndroid="transparent"
-            placeholder="Login"
-          />
-          <TextInput
-            style={{ borderWidth: 2, width: '50%', marginTop: 20, paddingHorizontal: 5 }}
-            underlineColorAndroid="transparent"
-            placeholder="Password"
-          />
-          <View
-            style={{
-              width: '50%',
-              justifyContent: 'center',
-              marginTop: 20,
-            }}
-          >
-            <Button
-              onPress={() => {
-                Alert.alert('You tapped the button!');
-              }}
-              title="Ok"
-            />
-          </View>
-          <View
-            style={{
-              width: '50%',
-              justifyContent: 'center',
-              marginTop: 20,
-            }}
-          >
-            <Button
-              onPress={() => {
-                Alert.alert('Move to register!');
-              }}
-              title="Register"
-            />
-          </View>
-        </View>
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    backgroundColor: '#fff',
-  },
-  imageContainer: {
-    flex: 2,
-    backgroundColor: 'red',
-    height: 100,
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
+const App = createStackNavigator({
+  Home: { screen: LoginScreen },
+  Register: { screen: RegisterScreen },
 });
+
+export default App
