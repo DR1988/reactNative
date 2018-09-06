@@ -31,7 +31,7 @@ export default class LoginScreen extends React.Component {
           <Image
             style={{ width: 100, height: 100 }}
             resizeMode='contain'
-            source={require('./logo.png')}
+            source={require('./assets/logo.png')}
           />
         </View>
         <View style={{
